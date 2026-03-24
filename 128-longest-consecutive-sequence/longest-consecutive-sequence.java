@@ -1,14 +1,14 @@
+import java.util.*;
+
 class Solution {
-    public int longestConsecutive(int[] nums) {
+    public int longestConsecutive(int[] nums){
         HashMap<Integer, Boolean> hm = new HashMap<>();
 
         for (int i = 0; i < nums.length; i++) {
             hm.put(nums[i], false);
         }
 
-        List<Integer> keys = new ArrayList<>(hm.keySet());
-
-        for (int key : keys) {
+        for (int key : hm.keySet()) {
             if (!hm.containsKey(key - 1)) {
                 hm.put(key, true);
             }
